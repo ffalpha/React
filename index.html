@@ -22,6 +22,10 @@
           name: "Ryu",
           age: 35,
         };
+
+        handleClick(e) {
+          console.log(e.target);
+        }
         render() {
           return (
             <div className="app-contnet">
@@ -29,6 +33,7 @@
               <p>My name is {this.state.name}</p>
               <p>And I am {this.state.age}</p>
               <p> {Math.random() * 10}</p>
+              <button onClick={this.handleClick}>Click Me</button>
             </div>
           );
         }
