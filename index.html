@@ -23,29 +23,23 @@
           age: 35,
         };
 
-        handleClick = (e) => {
+        handleChange = (e) => {
           this.setState({
-            name: "FAFawf",
+            name: e.target.value,
           });
         };
-
-        handleMouseOver(e) {
-          console.log(e);
-        }
-
-        handleCopy = (e) => {
-          console.log("Epa bn");
+        handeleSubmit = (e) => {
+          e.preventDefault();
+          console.log("Form submitede by ", this.state.name);
         };
         render() {
           return (
             <div className="app-contnet">
               <h1>Helo {this.state.name}</h1>
-              <p>My name is {this.state.name}</p>
-              <p>And I am {this.state.age}</p>
-              <p> {Math.random() * 10}</p>
-              <button onClick={this.handleClick}>Click Me</button>
-              <button onMouseOver={this.handleMouseOver}>Hover Me</button>
-              <p onCopy={this.handleCopy}>What we think,we become</p>
+              <form onSubmit={this.handeleSubmit}>
+                <input type="text" onChange={this.handleChange} />
+                <button>Submit</button>
+              </form>
             </div>
           );
         }
